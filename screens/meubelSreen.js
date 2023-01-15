@@ -15,6 +15,11 @@ const MeubelScreen = ({navigation})=> {
         } catch (error) {
             console.error(error);
         }
+
+        useEffect(() => {
+            getMeubels();
+        }
+        , []);
     }
 
 }
