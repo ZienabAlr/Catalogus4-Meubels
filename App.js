@@ -6,13 +6,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import MeubelScreen from "./screens/meubelScreen";
 
+const Stack = createNativeStackNavigator();
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Test!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+ 
 }
 
 const styles = StyleSheet.create({
