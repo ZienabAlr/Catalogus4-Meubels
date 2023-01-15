@@ -6,7 +6,7 @@ const MeubelComponent = props => {
     return (
         <View>
             <View style={styles.container}>
-                <HTML source={{ html: props.content }} style={{ width: 100, height: 100 }} />
+                <HTML source={{ html: props.content }}/>
                 <Text style={styles.text}>{props.title}</Text> 
             </View>   
         </View>
@@ -16,16 +16,17 @@ const MeubelComponent = props => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#CBCBCB',
+        backgroundColor: '#E7E7E7',
         alignItems: 'center',
         justifyContent: 'center',
+        margin: 10,
+        padding: 10,
 
-    },  text: {
+    }, text: {
         
         fontSize: 20,
         fontWeight: 'bold',
     },
-
   
 });
 export default MeubelComponent;
