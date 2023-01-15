@@ -7,35 +7,54 @@ const MeubelScreen = ({navigation})=> {
 
     const [meubels, setMeubels] = useState([]);
 
-    const getMeubels = async () => {
-        try {
-            const response = await fetch("https://zienabalras.com/wp-json/wp/v2/posts");
-            const json = await response.json();
-            setMeubels(json.results);
-        } catch (error) {
-            console.error(error);
-        }
+    useEffect(() => {
+        fetch("https://zienabalras.com/wp-json/wp/v2/posts")
+        .then(response => response.json())
+        .then(json => setMeubels(json))
+        .catch(error => console.error(error))
+    }, []);
 
-        useEffect(() => {
-            getMeubels();
-        }
-        , []);
+    return (
+        <View style={styles.container}>
+            <FlatList
+                data={meubels}
+                keyExtractor={item => item.id}
+                renderItem={({item}) => (
+                    <MeubelComponent title={item.title.rendered} />
+                )}
+            />
+        </View>
+    );
 
-        return (
-            <View style={styles.container}>
-                <FlatList
-                        data = {meubels}
-                        keyExtractor = {(item, index) => index.toString()}
-                        renderItem = {({item}) => (
-                            <MeubelComponent
-                                title = {item.title.rendered}   //rendered is the title of the post in the wordpress backend this is needed to get the title of the post in the wordpress backend
-                            />
-                        )}
-                />
-            </View>
-        );
-    }
 
+
+    // const getMeubels = async () => {
+       
+    //     try {
+
+    //         const response = await fetch(
+    //             'https://zienabalras.com/wp-json/wp/v2/posts',
+    //         );
+            
+    //         const json = await response.json();
+    //         console.log(json);
+    //         setMeubels(json);
+            
+    
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+
+    //     useEffect(() => {
+    //         getMeubels();
+    //     }
+    //     , []);
+      
+    // }
+
+    console.log(meubels);
+ 
+   
 }
 
 const styles = StyleSheet.create({
