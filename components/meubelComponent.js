@@ -1,12 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import HTML from 'react-native-render-html';
 
 const MeubelComponent = props => {
     return (
-        <View style={styles.container}>
-            <HTML source={{ html: props.content }} />
-            <Text>{props.title}</Text> 
+        <View>
+            <View style={styles.container}>
+                <HTML source={{ html: props.content }} style={{ width: 100, height: 100 }} />
+                <Text style={styles.text}>{props.title}</Text> 
+            </View>   
         </View>
     );
 }
@@ -14,11 +16,16 @@ const MeubelComponent = props => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#CBCBCB',
         alignItems: 'center',
         justifyContent: 'center',
-       
 
+    },  text: {
+        
+        fontSize: 20,
+        fontWeight: 'bold',
     },
+
+  
 });
 export default MeubelComponent;
