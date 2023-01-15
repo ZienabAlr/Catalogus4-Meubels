@@ -10,6 +10,8 @@ const detailScreen = ({navigation})=> {
     return (
         <View style={styles.container}>
             <Text>{detailComponent}</Text>
+            <Text>{"Hier kan je meer detail vinden"}</Text>
+
         </View>
     ); 
 }
@@ -25,3 +27,4 @@ const styles = StyleSheet.create({
 });
 
 export default detailScreen;
+  
