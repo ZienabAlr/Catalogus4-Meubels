@@ -5,7 +5,7 @@ import HTML from 'react-native-render-html';
 const MeubelComponent = props => {
     return (
         <View style={styles.container}>
-            
+            <HTML source={{ html: props.content }} />
             <Text>{props.title}</Text> 
         </View>
     );
