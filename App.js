@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 import MeubelScreen from './screens/meubelSreen.js';
+import detailScreen from './screens/detailScreen.js';
 
 const Stack = createNativeStackNavigator();
 
