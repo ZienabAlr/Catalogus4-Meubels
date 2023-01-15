@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from "react";
-import { StyleSheet, Text, View, Button, FlatList, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, FlatList, TouchableOpacity } from 'react-native';
 
 import MeubelComponent from "../components/meubelComponent";
-
 const MeubelScreen = ({navigation})=> {
 
     const [meubels, setMeubels] = useState([]);
@@ -20,9 +19,13 @@ const MeubelScreen = ({navigation})=> {
                 data={meubels}
                 keyExtractor={item => item.id}
                 renderItem={({item}) => (
-                    <TouchableOpacity onPress={() => navigation.navigate('Meubel', {title: item.title.rendered})}>
-                       <MeubelComponent title={item.title.rendered} />
-                     </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate(
+                        'Meubel',
+                        {title: item.title.rendered},
+                        {content: item.content.rendered}, 
+                        )}>
+                        <MeubelComponent title={item.title.rendered} content={item.content.rendered} />
+                    </TouchableOpacity>
                 )}
             />
         </View>
