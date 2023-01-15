@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
+import HTML from 'react-native-render-html';
 
 const MeubelComponent = props => {
     return (
         <View style={styles.container}>
-            <Image source={{uri: props.image}} style={{width: 100, height: 100}} />
-            <Text>{props.title}</Text>
+            
+            <Text>{props.title}</Text> 
         </View>
     );
 }
@@ -16,6 +17,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+       
+
     },
 });
 export default MeubelComponent;
