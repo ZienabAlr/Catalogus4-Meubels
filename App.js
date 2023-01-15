@@ -10,10 +10,11 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Test2!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Meubels" component={MeubelScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
