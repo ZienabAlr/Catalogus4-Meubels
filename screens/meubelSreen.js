@@ -29,37 +29,7 @@ const MeubelScreen = ({navigation})=> {
                 )}
             />
         </View>
-    );
-
-
-
-    // const getMeubels = async () => {
-       
-    //     try {
-
-    //         const response = await fetch(
-    //             'https://zienabalras.com/wp-json/wp/v2/posts',
-    //         );
-            
-    //         const json = await response.json();
-    //         console.log(json);
-    //         setMeubels(json);
-            
-    
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-
-    //     useEffect(() => {
-    //         getMeubels();
-    //     }
-    //     , []);
-      
-    // }
-
-    console.log(meubels);
- 
-   
+    ); 
 }
 
 const styles = StyleSheet.create({
