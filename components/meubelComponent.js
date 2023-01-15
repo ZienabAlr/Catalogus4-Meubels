@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 const MeubelComponent = props => {
     return (
         <View style={styles.container}>
+            <Image source={{uri: props.image}} style={{width: 100, height: 100}} />
             <Text>{props.title}</Text>
         </View>
     );
