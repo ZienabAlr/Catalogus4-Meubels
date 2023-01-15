@@ -20,6 +20,20 @@ const MeubelScreen = ({navigation})=> {
             getMeubels();
         }
         , []);
+
+        return (
+            <View style={styles.container}>
+                <FlatList
+                        data = {meubels}
+                        keyExtractor = {(item, index) => index.toString()}
+                        renderItem = {({item}) => (
+                            <MeubelComponent
+                                title = {item.title.rendered}   //rendered is the title of the post in the wordpress backend this is needed to get the title of the post in the wordpress backend
+                            />
+                        )}
+                />
+            </View>
+        );
     }
 
 }
