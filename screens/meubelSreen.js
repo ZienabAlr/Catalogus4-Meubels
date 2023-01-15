@@ -20,7 +20,9 @@ const MeubelScreen = ({navigation})=> {
                 data={meubels}
                 keyExtractor={item => item.id}
                 renderItem={({item}) => (
-                    <MeubelComponent title={item.title.rendered} />
+                    <TouchableOpacity onPress={() => navigation.navigate('Meubel', {title: item.title.rendered})}>
+                       <MeubelComponent title={item.title.rendered} />
+                     </TouchableOpacity>
                 )}
             />
         </View>
